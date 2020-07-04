@@ -2,6 +2,7 @@ package me.abdullah.main;
 
 import me.abdullah.command.CommandHandler;
 import me.abdullah.command.commands.ConnectCommand;
+import me.abdullah.command.commands.DisconnectCommand;
 import me.abdullah.command.commands.HostCommand;
 import me.abdullah.command.commands.MyIpCommand;
 import me.abdullah.uhmsg.client.Client;
@@ -15,6 +16,7 @@ public class Main {
         commandHandler.addCommand("connect", new ConnectCommand(this));
         commandHandler.addCommand("host", new HostCommand(this));
         commandHandler.addCommand("myip", new MyIpCommand());
+        commandHandler.addCommand("disconnect", new DisconnectCommand(this));
 
         commandHandler.await(this, true);
     }

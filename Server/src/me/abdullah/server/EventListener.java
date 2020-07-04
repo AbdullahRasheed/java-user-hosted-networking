@@ -17,6 +17,7 @@ public class EventListener {
         else if (p instanceof RemoveConnectionPacket){
             RemoveConnectionPacket packet = (RemoveConnectionPacket)p;
             packet.id = connection.id;
+            ConnectionHandler.connections.remove(connection);
             for (Connection c : ConnectionHandler.connections.values()) {
                 c.sendObject(packet);
             }
